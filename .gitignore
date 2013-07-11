@@ -1,6 +1,6 @@
 *.class
+build/
 
-# Package Files #
 
 *.war
 *.ear
