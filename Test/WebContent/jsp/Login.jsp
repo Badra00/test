@@ -41,63 +41,17 @@
         margin-bottom: 15px;
         padding: 7px 9px;
       }
-      
-       /* Sticky footer styles
-      -------------------------------------------------- */
-
-      html,
-      body {
-        height: 100%;
-        /* The html and body elements cannot have any padding or margin. */
-      }
-
-      /* Wrapper for page content to push down footer */
-      #wrap {
-        min-height: 100%;
-        height: auto !important;
-        height: 100%;
-        /* Negative indent footer by it's height */
-        margin: 0 auto -60px;
-      }
-
-      /* Set the fixed height of the footer here */
-      #push,
-      #footer {
-        height: 60px;
-      }
-      #footer {
-        background-color: #f5f5f5;
-      }
-
-      /* Lastly, apply responsive CSS fixes as necessary */
-      @media (max-width: 767px) {
-        #footer {
-          margin-left: -20px;
-          margin-right: -20px;
-          padding-left: 20px;
-          padding-right: 20px;
-        }
-      }
-
-	[role="contentinfo"] {
-	    margin-top: 1em;
-	    padding-bottom: 1em;
-	}
-	[role="contentinfo"] .container {
-	    border-top: 0.5em solid #000101;
-	}
-	[role="contentinfo"] p {
-	    margin-bottom: 0;
-	}
 
     </style>
 </head>
  
 <body>
+	<jsp:include page="menuH.jsp" />
+
 	<div class="container">
 
 		<s:actionerror />
-		<s:form action="login.action" method="post" cssClass="form-signin">
+		<s:form action="login" method="post" cssClass="form-signin" namespace="/">
 			<h2 class="form-signin-heading">Please sign in</h2>
 		    <input type="text" name="username" class="input-block-level" placeholder="Email address">
 	        <input type="password" name="password" class="input-block-level" placeholder="Password">
@@ -107,13 +61,9 @@
 		    <s:submit method="execute" value="Sign in" cssClass="btn btn-large btn-primary" />
 		</s:form>
 
-	</div>
-	
-	<div id="footer" role="contentinfo">
-		<div class="container">
-			<p class="copyright">&copy; Badradine Boulahia 2013. All rights reserved.</p>
-		</div>
-	</div>
+	 	<jsp:include page="Footer.jsp" /> 
+	 
+	 </div>
 	
 	<!-- Le javascript
     ================================================== -->
