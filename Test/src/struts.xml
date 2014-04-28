@@ -4,22 +4,36 @@
     "http://struts.apache.org/dtds/struts-2.0.dtd">
  
 <struts>
-    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
     <constant name="struts.devMode" value="true" />
     
     <constant name="struts.custom.i18n.resources" value="global" />
+    <constant name="struts.convention.result.path" value="/jsp/" />
  
     <package name="default" extends="struts-default" namespace="/">
-        <action name="login" class="com.badra.action.LoginAction">
-            <result name="success">jsp/Home.jsp</result>
-            <result name="error">Home.jsp</result>
+         <action name="ingredient" class="com.badra.action.IngredientAction">
+            <result name="success">/jsp/Ingredient.jsp</result>
+            <result name="error">/jsp/Ingredient.jsp</result>
         </action>
-         <action name="register" class="com.badra.action.RegisterAction">
-            <result name="success">Register.jsp</result>
-            <result name="error">Home.jsp</result>
+        
+        <action name="listRecette" class="com.badra.action.ListRecetteAction">
+            <result name="success">/jsp/ListRecette.jsp</result>
+            <result name="error">/jsp/ListRecette.jsp</result>
         </action>
-        <action name="logout" class="com.badra.action.LoginAction" method="logout">
-            <result name="success">Home.jsp</result>
+        
+        <action name="recette" class="com.badra.action.RecetteAction">
+            <result name="success">/jsp/Recette.jsp</result>
+            <result name="error">/jsp/ListRecette.jsp</result>
+        </action>
+        
+        <action name="modifyRecette" class="com.badra.action.RecetteAction">
+            <result name="success">/jsp/Recette.jsp</result>
+            <result name="error">/jsp/Recette.jsp</result>
+        </action>
+        
+        <action name="enregistrerRecette" class="com.badra.action.RecetteAction">
+            <result name="success">/jsp/ListRecette.jsp</result>
+            <result name="error">/jsp/Recette.jsp</result>
         </action>
     </package>
 </struts>

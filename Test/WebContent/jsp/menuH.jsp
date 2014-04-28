@@ -13,7 +13,6 @@
     <link href="${pageContext.request.contextPath}/css/bootstrap-responsive.css" rel="stylesheet">
 </head>
 <body>
-	<s:set var="login">${sessionScope.login}</s:set>
 	<div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
@@ -22,31 +21,15 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-            <s:if test="%{#login=='true'}">
-            	<span class="icon-bar"></span>
-            	<span class="icon-bar"></span>
-            </s:if>
           </button>
           <a class="brand" href="#">Test</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="<s:url action="login"/>">Home</a></li>
-              <li><a href="<s:url action="register"/>">Register</a></li>
-              <li><a href="#about">About</a></li>
+              <li><a href="Home">Home</a></li>
+              <li><a href="<s:url action="ingredient"/>">Ingredients</a></li>
+              <li><a href="<s:url action="listRecette"/>">Recettes</a></li>
               <li><a href="#contact">Contact</a></li>
-              <s:if test="%{#login=='true'}">
-              	<li><a href="#contact">Profil</a></li>
-              	<li><a href="<s:url action="logout"/>">Logout</a></li>
-              </s:if>
             </ul>
-            
-            <s:if test="%{#login=='false'}">
-	            <s:form action="login" method="post" cssClass="navbar-form pull-right" namespace="/">
-	              <input class="span2" name="email" type="text" placeholder="Email">
-	              <input class="span2" name="password" type="password" placeholder="Password">
-	              <s:submit method="execute" value="Sign in" cssClass="btn" />
-	            </s:form>
-            </s:if>
           </div><!--/.nav-collapse -->
         </div>
       </div>
