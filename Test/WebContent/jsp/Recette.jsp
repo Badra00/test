@@ -33,7 +33,7 @@
 								<td><s:property value="value"/></td>
 						</s:if>
 						<s:if test="key.edited==true">
-								<td> <s:select list="listeIngredient" key="id" value="nom" name="ingredientId"/> </td>
+								<td> <s:select list="%{#session.listeIngredient}" listKey="id" listValue="nom" theme="simple"/> </td>
 								<td> <s:textfield name="quantite" class="input-block-level" theme="simple" /> </td>
 						</s:if>
 						<s:if test="modeEdite==false">

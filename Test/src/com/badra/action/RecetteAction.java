@@ -1,5 +1,6 @@
 package com.badra.action;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -125,8 +126,24 @@ public class RecetteAction extends ActionSupport implements ServletRequestAware 
 	}
 	
 	public String ajouterIngredient() {
-		mapIngredient = (HashMap<Ingredient, Double>) httpServletRequest.getSession(false).getAttribute("listeIngredient");
+		mapIngredient = (HashMap<Ingredient, Double>) httpServletRequest.getSession(false).getAttribute("mapIngredients");
 		
+		Ingredient ingr = new Ingredient();
+		ingr.setEdited(true);
+		mapIngredient.put(ingr, (double) 0);
+		
+		setModeEdite(true);
+		
+		ArrayList<Ingredient> listeIngredient = new ArrayList<Ingredient>();
+		
+		for(int i=1; i<=4; i++) {
+			Ingredient ing = new Ingredient();
+			ingr.setId(i);
+			ingr.setNom("Test");
+			ingr.setPrix(1.5);
+			
+			listeIngredient.add(ing);
+		}
 		
 		httpServletRequest.getSession(false).setAttribute("mapIngredients", mapIngredient);
 		
